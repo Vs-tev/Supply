@@ -1,0 +1,51 @@
+/* Blue Button */
+.button-blue{
+    @apply inline-flex justify-center items-center px-4 py-2 bg-indigo-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest disabled:opacity-25 transition
+}
+
+.button-blue:hover{
+    @apply bg-indigo-600
+}
+
+.button-blue:focus{
+    @apply outline-none ring ring-blue-300
+}
+
+.button-blue:active{
+    @apply bg-indigo-600 
+}
+
+/* Secondary Button */
+.button-secondary{
+    @apply inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm disabled:opacity-25 transition
+}
+   
+.button-secondary:hover{
+    @apply text-gray-500 
+}
+
+.button-secondary:focus{
+    @apply outline-none border-blue-300 ring ring-blue-200 
+}
+
+.button-secondary:active{
+    @apply text-gray-800 bg-gray-50
+}
+
+/* Select */
+.select{
+    @apply border-gray-300 block rounded-md shadow-sm w-full
+}
+
+.select:focus{
+    @apply focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+}
+
+/* Checkbox */
+
+.form-checkbox{
+    @apply rounded h-4 w-4 text-blue-400  border-gray-300  
+}
+.form-checkbox:focus{
+    @apply ring-0 ring-offset-0 outline-none border-0
+}
