@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Order;
-
+use App\Notifications\NewOrderNotification;
 
 
 class MyOrdersController extends Controller
@@ -49,7 +49,12 @@ class MyOrdersController extends Controller
         $order = Order::where([['user_id', auth()->id()], ['basket', 1]])
         ->update(['basket' => 0]);
 
-        return Redirect::route('my_orders')->with('checkout_message', 'Order has been send');
-    }
+     $user = \App\Models\User::where('name', 'Admin')->firstOrFail();
+     
+     $user->notify(new NewOrderNotification(auth()->user()));
+
+    return Redirect::route('my_orders')->with('checkout_message', 'Order has been send');
+    
+}
    
 }
