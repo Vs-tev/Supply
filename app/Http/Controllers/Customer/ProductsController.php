@@ -40,7 +40,7 @@ class ProductsController extends Controller
                     $query->where([['basket', 1], ['user_id', auth()->id()]]);
                 }])
                 ->getproducts($request->all())
-                ->paginate()
+                ->paginate(100)
         ]);
         
     }
